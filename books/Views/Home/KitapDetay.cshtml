@@ -1,0 +1,76 @@
+@model books.Models.ViewModels.BookDetailVM
+
+<article>
+  <header class="mb-4">
+    <h1 class="fw-bolder mb-1">@Model.KitapAdi</h1>
+    <div class="text-muted fst-italic mb-2">
+      @Model.YayinTarihi tarihinde yayınlandı.
+    </div>
+    @*
+    <a class="badge bg-secondary text-decoration-none link-light" href="#!"
+      >Web Design</a
+    >
+    <a class="badge bg-secondary text-decoration-none link-light" href="#!"
+      >Freebies</a
+    >
+    *@
+  </header>
+  <div class="row">
+    <figure class="mb-4 col-md-5">
+      <img
+        class="img-fluid rounded"
+        src="~/images/book/@Model.Resim"
+        alt="@Model.KitapAdi"
+      />
+    </figure>
+    <section class="mb-5 col-md-7">
+      <div class="row my-4">
+        <div class="col-md-4">
+          <span class="fw-bold">Tür</span>
+        </div>
+        <div class="col-md-8">
+          @foreach (var tur in Model.KitapTurleri) {
+          <a class="btn btn-primary btn-sm mr-2" href="/Kitaplar/Tur/@tur.Id"
+            >@tur.TurAdi</a
+          >
+          }
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-md-4">
+          <span class="fw-bold">Dil</span>
+        </div>
+        <div class="col-md-8">@Model.Dil</div>
+      </div>
+      <div class="row my-4">
+        <div class="col-md-4">
+          <span class="fw-bold">Sayfa Sayısı</span>
+        </div>
+        <div class="col-md-8">@Model.SayfaSayisi</div>
+      </div>
+      <div class="row my-4">
+        <div class="col-md-4">
+          <span class="fw-bold">Yazar</span>
+        </div>
+        <div class="col-md-8">
+          <a
+            class="btn btn-primary btn-sm mr-2"
+            href="/Kitaplar/Yazar/@Model.Yazar.Id"
+          >
+            @Model.Yazar.YazarAdSoyad
+          </a>
+        </div>
+      </div>
+
+      <div class="row my-4">
+        <div class="col-md-4">
+          <span class="fw-bold">Yayınevi</span>
+        </div>
+        <div class="col-md-8">@Model.Yayinevi</div>
+      </div>
+
+      <p class="border-bottom fw-bold">Özet</p>
+      <p class="mb-4">@Model.Ozet</p>
+    </section>
+  </div>
+</article>

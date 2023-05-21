@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Models\\AdminViewModels",
+    "\\Views",
+    "\\Views\\Admin",
+    "\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Views\\Admin\\Diller.cshtml",
+  "PreviewInSolutionExplorer": false
+}

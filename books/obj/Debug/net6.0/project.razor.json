@@ -1,0 +1,106 @@
+{
+  "SerializedFilePath": "c:\\Users\\Cinar\\Desktop\\books\\obj\\Debug\\net6.0\\project.razor.json",
+  "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\books.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "6.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 1000
+  },
+  "RootNamespace": "books",
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Home\\KitapDetay.cshtml",
+      "TargetPath": "Views\\Home\\KitapDetay.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\_AdminLayout.cshtml",
+      "TargetPath": "Views\\Shared\\_AdminLayout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\Components\\Yazarlar\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Yazarlar\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Admin\\Turler.cshtml",
+      "TargetPath": "Views\\Admin\\Turler.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\Components\\Turler\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Turler\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Home\\Yazar.cshtml",
+      "TargetPath": "Views\\Home\\Yazar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Shared\\_Navbar.cshtml",
+      "TargetPath": "Views\\Shared\\_Navbar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Admin\\Login.cshtml",
+      "TargetPath": "Views\\Admin\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Home\\Kitaplar.cshtml",
+      "TargetPath": "Views\\Home\\Kitaplar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Cinar\\Desktop\\books\\Views\\Admin\\TurEkle.cshtml",
+      "TargetPath": "Views\\Admin\\TurEkle.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
+  "SerializationFormat": "0.3"
+}

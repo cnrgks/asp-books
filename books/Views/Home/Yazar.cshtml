@@ -1,0 +1,47 @@
+@model List<books.Models.ViewModels.IndexVM>
+  @{ ViewData["Title"] = "Yazar Sayfası"; }
+
+  <h1>@ViewBag.YazarInfo.adi</h1>
+
+  <table class="table table-condensed">
+    <tr>
+      <td>Doğum Tarihi</td>
+      <td>@ViewBag.YazarInfo.dogumTarihi</td>
+    </tr>
+    <tr>
+      <td>Doğum Yeri</td>
+      <td>@ViewBag.YazarInfo.dogumYeri</td>
+    </tr>
+    <tr>
+      <td>Cinsiyeti</td>
+      <td>@ViewBag.YazarInfo.cinsiyeti</td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <h3 class="my-5">
+      @ViewBag.YazarInfo.adi yazarına ait @ViewBag.YazarInfo.kitapSayisi adet
+      kitap bulundu.
+    </h3>
+
+    @foreach (var kitap in Model) {
+    <div class="col-lg-3">
+      <!-- Blog post-->
+      <div class="card mb-4">
+        <a href="/Kitap/@(kitap.Id)"
+          ><img
+            class="card-img-top"
+            src="~/images/book/@(kitap.Resim)"
+            alt="@kitap.KitapAdi"
+        /></a>
+        <div class="card-body">
+          <div class="small text-muted">@kitap.YayinTarihi</div>
+          <a class="text-decoration-none" href="/Kitap/@(kitap.Id)"
+            >@kitap.KitapAdi</a
+          >
+        </div>
+      </div>
+    </div>
+    }
+  </div></books.Models.ViewModels.IndexVM
+>

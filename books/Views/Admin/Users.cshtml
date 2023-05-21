@@ -1,0 +1,78 @@
+@model List<books.Models.AdminViewModels.UsersVM>
+
+@{
+  Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Kullanıcılar</h1>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="/Admin">Anasayfa</a></li>
+          <li class="breadcrumb-item active">Kullanıcılar</li>
+        </ol>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- /.col-md-6 -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <a href="/Admin/UserEkle" class="btn btn-success">
+              <i class="fa fa-plus mr-2"></i>Ekle
+            </a>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Kullanıcı Adı</th>
+                  <th>Şifre</th>
+                  <th>İşlem</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach (var user in Model)
+                {
+                  <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Username</td>
+                    <td>@user.Password</td>
+                    <td>
+                      @* EDIT BUTTON *@
+                      <a href="/Admin/UserDuzenle/@user.Id" class="btn btn-sm btn-primary" style="width: 2rem"><i
+                          class="fa fa-pen"></i></a>
+
+                      @* DELETE BUTTON *@
+                      <a href="/Admin/UserSil/@user.Id" class="btn btn-sm btn-danger" style="width: 2rem"><i
+                          class="fa fa-trash"></i></a>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+</books.Models.AdminViewModels.UsersVM>
