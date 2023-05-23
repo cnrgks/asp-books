@@ -9,117 +9,117 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = books
 build_property.RootNamespace = books
-build_property.ProjectDir = C:\Users\Cinar\Documents\GitHub\asp-books\books\
+build_property.ProjectDir = c:\Users\Cinar\Documents\GitHub\asp-books\books\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Cinar\Documents\GitHub\asp-books\books
+build_property.MSBuildProjectDirectory = c:\Users\Cinar\Documents\GitHub\asp-books\books
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilDuzenle.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilDuzenle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlsRHV6ZW5sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilEkle.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlsRWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Diller.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Diller.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlsbGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilSil.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilSil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlsU2lsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Index.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Login.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/TurDuzenle.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/TurDuzenle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHVyRHV6ZW5sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/TurEkle.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/TurEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHVyRWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Turler.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Turler.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHVybGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/TurSil.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/TurSil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHVyU2lsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/UserDuzenle.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/UserDuzenle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckR1emVubGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/UserEkle.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/UserEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckVrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Users.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/UserSil.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/UserSil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlclNpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/Index.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/KitapDetay.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/KitapDetay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxLaXRhcERldGF5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/Kitaplar.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/Kitaplar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxLaXRhcGxhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/Yazar.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Home/Yazar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxZYXphci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/Components/Turler/Default.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/Components/Turler/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVHVybGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/Components/Yazarlar/Default.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/Components/Yazarlar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcWWF6YXJsYXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/Error.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_AdminLayout.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_Navbar.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/_ViewImports.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/_ViewStart.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_Layout.cshtml]
+[c:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1jrqznjnsv
