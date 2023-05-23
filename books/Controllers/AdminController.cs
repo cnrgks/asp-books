@@ -131,7 +131,6 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
     public async Task<IActionResult> TurDuzenle(TurlerVM gelenData)
     {
         var tur = await db.Turlers.FirstOrDefaultAsync(x => x.Id == gelenData.Id);
@@ -239,7 +238,6 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
     public async Task<IActionResult> DilDuzenle(DillerVM gelendata)
     {
         var dil = await db.Dillers.FirstOrDefaultAsync(x => x.Id == gelendata.Id);
@@ -349,7 +347,6 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
     public async Task<IActionResult> UserDuzenle(UsersVM gelendata)
     {
         var user = await db.Users.FirstOrDefaultAsync(x => x.Id == gelendata.Id);

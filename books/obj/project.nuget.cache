@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R3VV52TixvkKLPrkKzQqycEEWe8iP4jNstU+/YTKbAeIfPPpVrtOpU9+WbkGxmMV1hlgmRltGmdsU0VLa5OmWw==",
+  "dgSpecHash": "yNRMPJib9w94tyEZGlZV8ReFK3TQjWwVwxPqNS+ZWQKOLC8kZZYt6/C0SCljaYkXirDBg68tBhw+llklMGv/Kw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cinar\\Desktop\\books\\books.csproj",
+  "projectFilePath": "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cinar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Cinar\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",

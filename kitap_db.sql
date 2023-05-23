@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Sunucu:                       127.0.0.1
--- Sunucu sürümü:                8.0.27 - MySQL Community Server - GPL
+-- Sunucu sürümü:                8.0.31 - MySQL Community Server - GPL
 -- Sunucu İşletim Sistemi:       Win64
--- HeidiSQL Sürüm:               12.1.0.6537
+-- HeidiSQL Sürüm:               12.4.0.6659
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -197,8 +197,7 @@ INSERT INTO `turler` (`ID`, `turAdi`, `Sira`) VALUES
 	(7, 'Bilim', 1),
 	(8, 'Macera', 1),
 	(9, 'Kurgu', 1),
-	(10, 'Edebiyat', 1),
-	(11, 'deneme', 1);
+	(10, 'Edebiyat', 1);
 /*!40000 ALTER TABLE `turler` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor kitap_db.turlertokitaplar
@@ -416,16 +415,16 @@ INSERT INTO `turlertokitaplar` (`ID`, `turID`, `kitapID`) VALUES
 
 -- tablo yapısı dökülüyor kitap_db.user
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin5;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin5;
 
--- kitap_db.user: 0 rows tablosu için veriler indiriliyor
+-- kitap_db.user: 1 rows tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
-	(0, 'cnrgks', 'rc834750');
+	(1, 'cnrgks', 'rc834750');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor kitap_db.yayinevleri
