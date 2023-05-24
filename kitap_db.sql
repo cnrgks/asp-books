@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Sunucu:                       127.0.0.1
--- Sunucu sürümü:                8.0.31 - MySQL Community Server - GPL
+-- Sunucu sürümü:                8.0.27 - MySQL Community Server - GPL
 -- Sunucu İşletim Sistemi:       Win64
--- HeidiSQL Sürüm:               12.4.0.6659
+-- HeidiSQL Sürüm:               12.1.0.6537
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -180,7 +180,7 @@ INSERT INTO `kitaplar` (`ID`, `adi`, `yazarID`, `dilID`, `sayfaSayisi`, `yayinev
 -- tablo yapısı dökülüyor kitap_db.turler
 CREATE TABLE IF NOT EXISTS `turler` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `turAdi` char(50) NOT NULL,
+  `turAdi` char(50) CHARACTER SET latin5 COLLATE latin5_turkish_ci NOT NULL,
   `Sira` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
