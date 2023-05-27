@@ -7,13 +7,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Kullanıcı Ekle</h1>
+                <h1 class="m-0">@ViewBag.PageTitle</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/Admin">Anasayfa</a></li>
                     <li class="breadcrumb-item"><a href="/Admin/Users">Kullanıcılar</a></li>
-                    <li class="breadcrumb-item active">Kullanıcı Ekle</li>
+                    <li class="breadcrumb-item active">@ViewBag.PageTitle</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -55,7 +55,8 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <a href="/Admin/Users" type="submit" class="btn btn-default">Vazgeç</a>
-                            <button type="submit" class="btn btn-success float-right">Ekle</button>
+                            <button type="submit"
+                                class="btn @ViewBag.ButtonRenk float-right">@ViewBag.ButtonText</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>

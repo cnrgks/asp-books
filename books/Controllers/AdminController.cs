@@ -89,100 +89,82 @@ public class AdminController : Controller
     }
 
     [HttpGet]
-    public IActionResult TurEkle()
+    public IActionResult TurForm(int? id)
     {
-        return View();
+        if (id != null)
+        {
+            TurlerVM duzenlenecekTur = (from x in db.Turlers
+                                        where x.Id == id
+                                        select new TurlerVM
+                                        {
+                                            Id = x.Id,
+                                            Sira = x.Sira,
+                                            TurAdi = x.TurAdi
+                                        }).FirstOrDefault();
+
+            ViewBag.PageTitle = "Tür Düzenle";
+            ViewBag.ButtonRenk = "btn-primary";
+            ViewBag.ButtonText = "Kaydet";
+            return View(duzenlenecekTur);
+        }
+        else if (id == null)
+        {
+            ViewBag.PageTitle = "Tür Ekle";
+            ViewBag.ButtonRenk = "btn-success";
+            ViewBag.ButtonText = "Ekle";
+            return View();
+        }
+        else
+        {
+            return View();
+        }
+
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> TurEkle(TurlerVM gelenData)
+    public async Task<IActionResult> TurForm(TurlerVM gelenData)
     {
         if (!ModelState.IsValid)
         {
             return View(gelenData);
         }
 
-        Turler yeniTur = new Turler
+        if (gelenData.Id != 0)
         {
-            TurAdi = gelenData.TurAdi,
-            Sira = gelenData.Sira
-        };
-
-        await db.AddAsync(yeniTur);
+            Turler duzenelenecekTur = db.Turlers.Find(gelenData.Id);
+            if (duzenelenecekTur != null)
+            {
+                duzenelenecekTur.Sira = gelenData.Sira;
+                duzenelenecekTur.TurAdi = gelenData.TurAdi;
+            }
+        }
+        else if (gelenData.Id == 0)
+        {
+            Turler yeniTur = new Turler
+            {
+                TurAdi = gelenData.TurAdi,
+                Sira = gelenData.Sira
+            };
+            await db.AddAsync(yeniTur);
+        }
         await db.SaveChangesAsync();
 
         return Redirect("/Admin/Turler");
     }
 
-    [HttpGet]
-    public IActionResult TurDuzenle(int id)
+
+    public async Task<IActionResult> TurSil(int id)
     {
-        ViewBag.TurInfo = (from x in db.Turlers
-                           where x.Id == id
-                           select new TurlerVM
-                           {
-                               Id = x.Id,
-                               TurAdi = x.TurAdi,
-                               Sira = x.Sira
-                           }).FirstOrDefault();
-
-        return View();
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> TurDuzenle(TurlerVM gelenData)
-    {
-        var tur = await db.Turlers.FirstOrDefaultAsync(x => x.Id == gelenData.Id);
-
-        if (!ModelState.IsValid)
+        Turler silinecekTur = db.Turlers.Find(id);
+        if (silinecekTur != null)
         {
-            return View(gelenData);
+            db.Turlers.Remove(silinecekTur);
+            await db.SaveChangesAsync();
         }
-
-        tur.Id = gelenData.Id;
-        tur.TurAdi = gelenData.TurAdi;
-        tur.Sira = gelenData.Sira;
-
-        db.Turlers.Update(tur);
-        await db.SaveChangesAsync();
 
         return Redirect("/Admin/Turler");
     }
-
-    [HttpGet]
-    public IActionResult TurSil(int? id)
-    {
-        ViewBag.TurInfo = (from x in db.Turlers
-                           where x.Id == id
-                           select new TurlerVM
-                           {
-                               Id = x.Id,
-                               TurAdi = x.TurAdi,
-                               Sira = x.Sira
-                           }).FirstOrDefault();
-
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> TurSilOnay(int id)
-    {
-        var tur = await db.Turlers.FindAsync(id);
-
-        db.Turlers.Remove(tur);
-        await db.SaveChangesAsync();
-
-        return RedirectToAction("Turler");
-    }
-
-    // DİLLER
 
     [Route("/Admin/Diller")]
     public IActionResult Diller()
@@ -199,95 +181,78 @@ public class AdminController : Controller
     }
 
     [HttpGet]
-    public IActionResult DilEkle()
+    public IActionResult DilForm(int? id)
     {
-        return View();
+        if (id != null)
+        {
+            DillerVM duzenlenecekDil = (from x in db.Dillers
+                                        where x.Id == id
+                                        select new DillerVM
+                                        {
+                                            Id = x.Id,
+                                            DilAdi = x.DilAdi
+                                        }).FirstOrDefault();
+
+            ViewBag.PageTitle = "Dil Düzenle";
+            ViewBag.ButtonRenk = "btn-primary";
+            ViewBag.ButtonText = "Kaydet";
+            return View(duzenlenecekDil);
+        }
+        else if (id == null)
+        {
+            ViewBag.PageTitle = "Dil Ekle";
+            ViewBag.ButtonRenk = "btn-success";
+            ViewBag.ButtonText = "Ekle";
+            return View();
+        }
+        else
+        {
+            return View();
+        }
+
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DilEkle(DillerVM gelenData)
+    public async Task<IActionResult> DilForm(DillerVM gelenData)
     {
         if (!ModelState.IsValid)
         {
             return View(gelenData);
         }
 
-        Diller yeniDil = new Diller
+        if (gelenData.Id != 0)
         {
-            DilAdi = gelenData.DilAdi
-        };
-
-        await db.AddAsync(yeniDil);
+            Diller duzenelenecekDil = db.Dillers.Find(gelenData.Id);
+            if (duzenelenecekDil != null)
+            {
+                duzenelenecekDil.DilAdi = gelenData.DilAdi;
+            }
+        }
+        else if (gelenData.Id == 0)
+        {
+            Diller yeniDil = new Diller
+            {
+                DilAdi = gelenData.DilAdi,
+            };
+            await db.AddAsync(yeniDil);
+        }
         await db.SaveChangesAsync();
 
         return Redirect("/Admin/Diller");
     }
 
-    [HttpGet]
-    public IActionResult DilDuzenle(int id)
+    public async Task<IActionResult> DilSil(int id)
     {
-        ViewBag.DilInfo = (from x in db.Dillers
-                           where x.Id == id
-                           select new DillerVM
-                           {
-                               Id = x.Id,
-                               DilAdi = x.DilAdi,
-                           }).FirstOrDefault();
-        return View();
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> DilDuzenle(DillerVM gelendata)
-    {
-        var dil = await db.Dillers.FirstOrDefaultAsync(x => x.Id == gelendata.Id);
-
-        if (!ModelState.IsValid)
+        Diller silinecekDil = db.Dillers.Find(id);
+        if (silinecekDil != null)
         {
-            return View(gelendata);
+            db.Dillers.Remove(silinecekDil);
+            await db.SaveChangesAsync();
         }
-
-        dil.Id = gelendata.Id;
-        dil.DilAdi = gelendata.DilAdi;
-
-        db.Dillers.Update(dil);
-        await db.SaveChangesAsync();
 
         return Redirect("/Admin/Diller");
     }
-
-    [HttpGet]
-    public IActionResult DilSil(int? id)
-    {
-        ViewBag.DilInfo = (from x in db.Dillers
-                           where x.Id == id
-                           select new DillerVM
-                           {
-                               Id = x.Id,
-                               DilAdi = x.DilAdi,
-                           }).FirstOrDefault();
-
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DilSilOnay(int id)
-    {
-        var dil = await db.Dillers.FindAsync(id);
-
-        db.Dillers.Remove(dil);
-        await db.SaveChangesAsync();
-
-        return RedirectToAction("Diller");
-    }
-
-    // USERS
 
     [Route("/Admin/Users")]
     public IActionResult Users()
@@ -305,97 +270,182 @@ public class AdminController : Controller
     }
 
     [HttpGet]
-    public IActionResult UserEkle()
+    public IActionResult UserForm(int? id)
     {
-        return View();
+        if (id != null)
+        {
+            UsersVM duzenlenecekUser = (from x in db.Users
+                                        where x.Id == id
+                                        select new UsersVM
+                                        {
+                                            Id = x.Id,
+                                            Username = x.Username,
+                                            Password = x.Password
+                                        }).FirstOrDefault();
+
+            ViewBag.PageTitle = "Kullanıcı Düzenle";
+            ViewBag.ButtonRenk = "btn-primary";
+            ViewBag.ButtonText = "Kaydet";
+            return View(duzenlenecekUser);
+        }
+        else if (id == null)
+        {
+            ViewBag.PageTitle = "Kullanıcı Ekle";
+            ViewBag.ButtonRenk = "btn-success";
+            ViewBag.ButtonText = "Ekle";
+            return View();
+        }
+        else
+        {
+            return View();
+        }
+
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> UserEkle(UsersVM gelenData)
+    public async Task<IActionResult> UserForm(UsersVM gelenData)
     {
         if (!ModelState.IsValid)
         {
             return View(gelenData);
         }
 
-        User yeniUser = new User
+        if (gelenData.Id != 0)
         {
-            Id = gelenData.Id,
-            Username = gelenData.Username,
-            Password = gelenData.Password
-        };
-
-        await db.AddAsync(yeniUser);
+            User duzenlenecekUser = db.Users.Find(gelenData.Id);
+            if (duzenlenecekUser != null)
+            {
+                duzenlenecekUser.Username = gelenData.Username;
+                duzenlenecekUser.Password = gelenData.Password;
+            }
+        }
+        else if (gelenData.Id == 0)
+        {
+            User yeniUser = new User
+            {
+                Username = gelenData.Username,
+                Password = gelenData.Password
+            };
+            await db.AddAsync(yeniUser);
+        }
         await db.SaveChangesAsync();
 
         return Redirect("/Admin/Users");
     }
 
-    [HttpGet]
-    public IActionResult UserDuzenle(int id)
+    public async Task<IActionResult> UserSil(int id)
     {
-        ViewBag.UserInfo = (from x in db.Users
-                            where x.Id == id
-                            select new UsersVM
-                            {
-                                Id = x.Id,
-                                Username = x.Username,
-                                Password = x.Password
-                            }).FirstOrDefault();
-        return View();
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> UserDuzenle(UsersVM gelendata)
-    {
-        var user = await db.Users.FirstOrDefaultAsync(x => x.Id == gelendata.Id);
-
-        if (!ModelState.IsValid)
+        User silinecekUser = db.Users.Find(id);
+        if (silinecekUser != null)
         {
-            return View(gelendata);
+            db.Users.Remove(silinecekUser);
+            await db.SaveChangesAsync();
         }
-
-        user.Id = gelendata.Id;
-        user.Username = gelendata.Username;
-        user.Password = gelendata.Password;
-
-        db.Users.Update(user);
-        await db.SaveChangesAsync();
 
         return Redirect("/Admin/Users");
     }
 
-    [HttpGet]
-    public IActionResult UserSil(int? id)
+    [Route("/Admin/Yazarlar")]
+    public IActionResult Yazarlar()
     {
-        ViewBag.UserInfo = (from x in db.Users
-                            where x.Id == id
-                            select new UsersVM
-                            {
-                                Id = x.Id,
-                                Username = x.Username,
-                                Password = x.Password
-                            }).FirstOrDefault();
+        List<YazarlarVM> YazarListesi = (from x in db.Yazarlars
+                                         select new YazarlarVM
+                                         {
+                                             Id = x.Id,
+                                             Adi = x.Adi,
+                                             Soyadi = x.Soyadi,
+                                             DogumTarihi = x.DogumTarihi,
+                                             DogumYeri = x.DogumYeri,
+                                             Cinsiyeti = x.Cinsiyeti
+                                         }).ToList();
 
-        if (id == null)
+        db.Dispose();
+        return View(YazarListesi);
+    }
+
+    [HttpGet]
+    public IActionResult YazarForm(int? id)
+    {
+        if (id != null)
         {
-            return NotFound();
-        }
+            YazarlarVM duzenlenecekYazar = (from x in db.Yazarlars
+                                            where x.Id == id
+                                            select new YazarlarVM
+                                            {
+                                                Id = x.Id,
+                                                Adi = x.Adi,
+                                                Soyadi = x.Soyadi,
+                                                DogumTarihi = x.DogumTarihi,
+                                                DogumYeri = x.DogumYeri,
+                                                Cinsiyeti = x.Cinsiyeti
+                                            }).FirstOrDefault();
 
-        return View();
+            ViewBag.PageTitle = "Yazar Düzenle";
+            ViewBag.ButtonRenk = "btn-primary";
+            ViewBag.ButtonText = "Kaydet";
+            return View(duzenlenecekYazar);
+        }
+        else if (id == null)
+        {
+            ViewBag.PageTitle = "Yazar Ekle";
+            ViewBag.ButtonRenk = "btn-success";
+            ViewBag.ButtonText = "Ekle";
+            return View();
+        }
+        else
+        {
+            return View();
+        }
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> UserSilOnay(int id)
+    public async Task<IActionResult> YazarForm(YazarlarVM gelenData)
     {
-        var user = await db.Users.FindAsync(id);
+        if (!ModelState.IsValid)
+        {
+            return View(gelenData);
+        }
 
-        db.Users.Remove(user);
+        if (gelenData.Id != 0)
+        {
+            Yazarlar duzenlenecekYazar = db.Yazarlars.Find(gelenData.Id);
+            if (duzenlenecekYazar != null)
+            {
+                duzenlenecekYazar.Adi = gelenData.Adi;
+                duzenlenecekYazar.Soyadi = gelenData.Soyadi;
+                duzenlenecekYazar.DogumTarihi = gelenData.DogumTarihi;
+                duzenlenecekYazar.DogumYeri = gelenData.DogumYeri;
+                duzenlenecekYazar.Cinsiyeti = gelenData.Cinsiyeti;
+            }
+        }
+        else if (gelenData.Id == 0)
+        {
+            Yazarlar yeniYazar = new Yazarlar
+            {
+                Adi = gelenData.Adi,
+                Soyadi = gelenData.Soyadi,
+                DogumTarihi = gelenData.DogumTarihi,
+                DogumYeri = gelenData.DogumYeri,
+                Cinsiyeti = gelenData.Cinsiyeti
+            };
+            await db.AddAsync(yeniYazar);
+        }
         await db.SaveChangesAsync();
 
-        return RedirectToAction("Users");
+        return Redirect("/Admin/Yazarlar");
     }
 
+    public async Task<IActionResult> YazarSil(int id)
+    {
+        Yazarlar silinecekYazar = db.Yazarlars.Find(id);
+        if (silinecekYazar != null)
+        {
+            db.Yazarlars.Remove(silinecekYazar);
+            await db.SaveChangesAsync();
+        }
+
+        return Redirect("/Admin/Yazarlar");
+    }
 }

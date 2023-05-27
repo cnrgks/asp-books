@@ -32,7 +32,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
-            <a href="/Admin/TurEkle" class="btn btn-success">
+            <a href="/Admin/TurForm" class="btn btn-success">
               <i class="fa fa-plus mr-2"></i>Ekle
             </a>
           </div>
@@ -55,12 +55,12 @@
                     <td>@tur.Sira</td>
                     <td>
                       @* EDIT BUTTON *@
-                      <a href="/Admin/TurDuzenle/@tur.Id" class="btn btn-sm btn-primary" style="width: 2rem"><i
+                      <a href="/Admin/TurForm/@tur.Id" class="btn btn-sm btn-primary" style="width: 2rem"><i
                           class="fa fa-pen"></i></a>
 
                       @* DELETE BUTTON *@
-                      <a href="/Admin/TurSil/@tur.Id" class="btn btn-sm btn-danger" style="width: 2rem"><i
-                          class="fa fa-trash"></i></a>
+                      <a href="#" onclick="ConfirmDelete(id=@tur.Id);" class="btn btn-sm btn-danger"
+                        style="width: 2rem"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                 }
@@ -75,4 +75,23 @@
   </div>
   <!-- /.container-fluid -->
 </div>
-</books.Models.AdminViewModels.TurlerVM>
+
+<script type="text/javascript">
+  function ConfirmDelete(id) {
+    Swal.fire({
+      title: 'Bir Kayıt Siliyorsunuz!',
+      text: 'Bu kaydı silmek istediğinizden emin misiniz?',
+      icon: 'error',
+      confirmButtonText: 'Sil',
+      cancelButtonText: 'Vazgeç',
+      showCancelButton: true,
+      reverseButtons: true
+    }).then((value) => {
+      if (value.isConfirmed) {
+        window.location.replace("/Admin/TurSil/" + id);
+      }
+    })
+  }
+
+
+</script>

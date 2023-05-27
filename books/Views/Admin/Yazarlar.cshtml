@@ -1,4 +1,4 @@
-@model List<books.Models.AdminViewModels.UsersVM>
+@model List<books.Models.AdminViewModels.YazarlarVM>
 
 @{
   Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,13 +8,13 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Kullanıcılar</h1>
+        <h1 class="m-0">Yazarlar</h1>
       </div>
       <!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="/Admin">Anasayfa</a></li>
-          <li class="breadcrumb-item active">Kullanıcılar</li>
+          <li class="breadcrumb-item active">Yazarlar</li>
         </ol>
       </div>
       <!-- /.col -->
@@ -32,7 +32,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
-            <a href="/Admin/UserForm" class="btn btn-success">
+            <a href="/Admin/YazarForm" class="btn btn-success">
               <i class="fa fa-plus mr-2"></i>Ekle
             </a>
           </div>
@@ -41,25 +41,38 @@
               <thead>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Kullanıcı Adı</th>
-                  <th>Şifre</th>
+                  <th>Yazar Adı</th>
+                  <th>Soyadı</th>
+                  <th>Doğum Tarihi</th>
+                  <th>Doğum Yeri</th>
+                  <th>Cinsiyeti</th>
                   <th>İşlem</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach (var user in Model)
+                @foreach (var yazar in Model)
                 {
                   <tr>
-                    <td>@user.Id</td>
-                    <td>@user.Username</td>
-                    <td>@user.Password</td>
+                    <td>@yazar.Id</td>
+                    <td>@yazar.Adi</td>
+                    <td>@yazar.Soyadi</td>
+                    <td>@yazar.DogumTarihi</td>
+                    <td>@yazar.DogumYeri</td>
+                    @if (yazar.Cinsiyeti)
+                    {
+                      <td>Erkek</td>
+                    }
+                    else
+                    {
+                      <td>Kadın</td>
+                    }
                     <td>
                       @* EDIT BUTTON *@
-                      <a href="/Admin/UserForm/@user.Id" class="btn btn-sm btn-primary" style="width: 2rem"><i
+                      <a href="/Admin/YazarForm/@yazar.Id" class="btn btn-sm btn-primary" style="width: 2rem"><i
                           class="fa fa-pen"></i></a>
 
                       @* DELETE BUTTON *@
-                      <a href="#" onclick="ConfirmDelete(id=@user.Id)" class="btn btn-sm btn-danger"
+                      <a href="#" onclick="ConfirmDelete(id=@yazar.Id)" class="btn btn-sm btn-danger"
                         style="width: 2rem"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
@@ -88,7 +101,7 @@
       reverseButtons: true
     }).then((value) => {
       if (value.isConfirmed) {
-        window.location.replace("/Admin/UserSil/" + id);
+        window.location.replace("/Admin/YazarSil/" + id);
       }
     })
   }
