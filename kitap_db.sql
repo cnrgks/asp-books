@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `diller` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `dilAdi` char(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin5;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin5;
 
 -- kitap_db.diller: 5 rows tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `diller` DISABLE KEYS */;
@@ -39,23 +39,15 @@ INSERT INTO `diller` (`ID`, `dilAdi`) VALUES
 -- tablo yapısı dökülüyor kitap_db.iletisim
 CREATE TABLE IF NOT EXISTS `iletisim` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `isim` varchar(100) NOT NULL,
   `eposta` varchar(100) NOT NULL,
   `konu` varchar(150) NOT NULL,
   `mesaj` varchar(600) NOT NULL,
-  `tarihSaat` datetime NOT NULL,
-  `ip` char(50) NOT NULL,
-  `goruldu` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin5;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin5;
 
--- kitap_db.iletisim: 5 rows tablosu için veriler indiriliyor
+-- kitap_db.iletisim: 0 rows tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `iletisim` DISABLE KEYS */;
-INSERT INTO `iletisim` (`id`, `eposta`, `konu`, `mesaj`, `tarihSaat`, `ip`, `goruldu`) VALUES
-	(3, 'test@test.com', 'Konulardan bir konu', 'Mesajlardan bir mesaj', '2022-05-20 10:45:31', '45.45.67.89', 0),
-	(4, 'test@test.com', 'yertye', 'dfgsfdg', '2022-05-20 10:48:40', '45.45.67.89', 0),
-	(5, 'test@test.com', 'Konulardan bir konu', 'Mesajlardan bir mesaj', '2022-05-20 10:51:01', '45.45.67.89', 0),
-	(6, 'tete@sdfg.com', 'retyr', 'rtyrty', '2022-05-25 09:22:29', '192.25.25.36', 0),
-	(7, 'tert@dfg.com', 'fasdfasdf', 'dfgsdf gsdfg sdfg', '2022-05-26 14:45:05', '192.25.25.36', 0);
 /*!40000 ALTER TABLE `iletisim` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor kitap_db.kitaplar
