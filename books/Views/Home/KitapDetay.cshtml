@@ -8,20 +8,16 @@
     </div>
     @*
     <a class="badge bg-secondary text-decoration-none link-light" href="#!"
-      >Web Design</a
+    >Web Design</a
     >
     <a class="badge bg-secondary text-decoration-none link-light" href="#!"
-      >Freebies</a
+    >Freebies</a
     >
     *@
   </header>
   <div class="row">
     <figure class="mb-4 col-md-5">
-      <img
-        class="img-fluid rounded"
-        src="~/images/book/@Model.Resim"
-        alt="@Model.KitapAdi"
-      />
+      <img class="img-fluid rounded" src="~/images/book/@Model.Resim" alt="@Model.KitapAdi" />
     </figure>
     <section class="mb-5 col-md-7">
       <div class="row my-4">
@@ -29,10 +25,9 @@
           <span class="fw-bold">Tür</span>
         </div>
         <div class="col-md-8">
-          @foreach (var tur in Model.KitapTurleri) {
-          <a class="btn btn-primary btn-sm mr-2" href="/Kitaplar/Tur/@tur.Id"
-            >@tur.TurAdi</a
-          >
+          @foreach (var tur in Model.KitapTurleri)
+          {
+            <a class="btn btn-primary btn-sm mr-2" href="/Kitaplar/Tur/@tur.Id">@tur.TurAdi</a>
           }
         </div>
       </div>
@@ -53,10 +48,7 @@
           <span class="fw-bold">Yazar</span>
         </div>
         <div class="col-md-8">
-          <a
-            class="btn btn-primary btn-sm mr-2"
-            href="/Kitaplar/Yazar/@Model.Yazar.Id"
-          >
+          <a class="btn btn-primary btn-sm mr-2" href="/Kitaplar/Yazar/@Model.Yazar.Id">
             @Model.Yazar.YazarAdSoyad
           </a>
         </div>

@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Anasayfa</a>
+          <a class='nav-link @(ViewData["Title"]=="Anasayfa" ? "active" : "")  ' href="/">Anasayfa</a>
+        </li>
+        <li class=" nav-item">
+          <a class='nav-link @(ViewData["Title"]=="Tüm Kitaplar" ? "active" : "")  ' href="/Kitaplar">Tüm Kitaplar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Kitaplar">Tüm Kitaplar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Contact">İletişim</a>
+          <a class='nav-link @(ViewData["Title"]=="İletişim" ? "active" : "")  ' href="/Contact">İletişim</a>
         </li>
       </ul>
     </div>

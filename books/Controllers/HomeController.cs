@@ -184,6 +184,11 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Contact(ContactVM gelenData)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(gelenData);
+        }
+
         Iletisim yeniData = new Iletisim
         {
             Isim = gelenData.Isim,

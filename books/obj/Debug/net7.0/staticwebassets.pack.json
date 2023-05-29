@@ -9601,10 +9601,6 @@
       "PackagePath": "staticwebassets\\admin\\plugins\\uplot\\uPlot.min.css"
     },
     {
-      "Id": "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\wwwroot\\css\\contact.css",
-      "PackagePath": "staticwebassets\\css\\contact.css"
-    },
-    {
       "Id": "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
