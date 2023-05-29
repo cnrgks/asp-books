@@ -1,0 +1,46 @@
+@model books.Models.ViewModels.ContactVM
+
+<div class="card">
+    <div class="card-body row">
+        <div class="col-5 text-center d-flex align-items-center justify-content-center">
+            <div class="">
+                <h2><strong>Books</strong> İletişim</h2>
+                <p class="lead mb-5"><strong>Şişli Mesleki ve Teknik Anadolu Lisesi</strong><br>
+                    <strong>+90 212 111 2233</strong>
+                </p>
+            </div>
+        </div>
+        <div class="col-7">
+            <form method="post">
+                @Html.AntiForgeryToken()
+                <div class="form-group my-2">
+                    <label><strong>İsim</strong></label>
+                    <input asp-for="Isim" type="text" class="form-control" />
+
+                    <span asp-validation-for="Isim" class="text-danger"></span>
+                </div>
+                <div class="form-group my-2">
+                    <label><strong>E-Posta</strong></label>
+                    <input asp-for="Eposta" type="email" class="form-control" />
+
+                    <span asp-validation-for="Eposta" class="text-danger"></span>
+                </div>
+                <div class="form-group my-2">
+                    <label><strong>Konu</strong></label>
+                    <input asp-for="Konu" type="text" class="form-control" />
+
+                    <span asp-validation-for="Konu" class="text-danger"></span>
+                </div>
+                <div class="form-group my-2">
+                    <label><strong>Mesaj</strong></label>
+                    <textarea asp-for="Mesaj" type="text" class="form-control" rows="4"></textarea>
+
+                    <span asp-validation-for="Mesaj" class="text-danger"></span>
+                </div>
+                <div class="form-group my-2">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

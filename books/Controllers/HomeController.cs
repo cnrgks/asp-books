@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using books.Models;
 using books.Models.Entities;
 using books.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using books.Models.AdminViewModels;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace books.Controllers;
 
@@ -165,6 +170,31 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    [Route("/Contact")]
+    [HttpGet]
+    public IActionResult Contact()
+    {
+        return View();
+    }
+
+    [Route("/Contact")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Contact(ContactVM gelenData)
+    {
+        Iletisim yeniData = new Iletisim
+        {
+            Isim = gelenData.Isim,
+            Eposta = gelenData.Eposta,
+            Konu = gelenData.Konu,
+            Mesaj = gelenData.Mesaj
+        };
+        await db.AddAsync(yeniData);
+        await db.SaveChangesAsync();
+
+        return Redirect("/Contact");
     }
 
 }

@@ -31,10 +31,8 @@ public partial class KitapDbContext : DbContext
 
     public virtual DbSet<Yazarlar> Yazarlars { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
-    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
@@ -47,9 +45,7 @@ public partial class KitapDbContext : DbContext
 
             entity.ToTable("diller");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("ID");
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.DilAdi)
                 .HasMaxLength(50)
                 .IsFixedLength()
@@ -62,26 +58,19 @@ public partial class KitapDbContext : DbContext
 
             entity.ToTable("iletisim");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Eposta)
                 .HasMaxLength(100)
                 .HasColumnName("eposta");
-            entity.Property(e => e.Goruldu).HasColumnName("goruldu");
-            entity.Property(e => e.Ip)
-                .HasMaxLength(50)
-                .IsFixedLength()
-                .HasColumnName("ip");
+            entity.Property(e => e.Isim)
+                .HasMaxLength(100)
+                .HasColumnName("isim");
             entity.Property(e => e.Konu)
                 .HasMaxLength(150)
                 .HasColumnName("konu");
             entity.Property(e => e.Mesaj)
                 .HasMaxLength(600)
                 .HasColumnName("mesaj");
-            entity.Property(e => e.TarihSaat)
-                .HasColumnType("datetime")
-                .HasColumnName("tarihSaat");
         });
 
         modelBuilder.Entity<Kitaplar>(entity =>
@@ -93,9 +82,7 @@ public partial class KitapDbContext : DbContext
                 .HasCharSet("latin1")
                 .UseCollation("latin1_swedish_ci");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("ID");
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Adi)
                 .HasMaxLength(200)
                 .IsFixedLength()
@@ -104,7 +91,6 @@ public partial class KitapDbContext : DbContext
                 .HasCharSet("latin5");
             entity.Property(e => e.DilId)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)")
                 .HasColumnName("dilID");
             entity.Property(e => e.Ozet)
                 .HasMaxLength(5000)
@@ -113,19 +99,18 @@ public partial class KitapDbContext : DbContext
                 .HasCharSet("latin5");
             entity.Property(e => e.Resim)
                 .HasMaxLength(50)
-                .HasColumnName("resim");
+                .HasColumnName("resim")
+                .UseCollation("latin5_turkish_ci")
+                .HasCharSet("latin5");
             entity.Property(e => e.SayfaSayisi)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)")
                 .HasColumnName("sayfaSayisi");
             entity.Property(e => e.YayinTarihi).HasColumnName("yayinTarihi");
             entity.Property(e => e.YayineviId)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)")
                 .HasColumnName("yayineviID");
             entity.Property(e => e.YazarId)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)")
                 .HasColumnName("yazarID");
         });
 
@@ -138,16 +123,14 @@ public partial class KitapDbContext : DbContext
                 .HasCharSet("latin1")
                 .UseCollation("latin1_swedish_ci");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("ID");
-            entity.Property(e => e.Sira)
-                .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)");
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Sira).HasDefaultValueSql("'1'");
             entity.Property(e => e.TurAdi)
                 .HasMaxLength(50)
                 .IsFixedLength()
-                .HasColumnName("turAdi");
+                .HasColumnName("turAdi")
+                .UseCollation("latin5_turkish_ci")
+                .HasCharSet("latin5");
         });
 
         modelBuilder.Entity<Turlertokitaplar>(entity =>
@@ -159,16 +142,12 @@ public partial class KitapDbContext : DbContext
                 .HasCharSet("latin1")
                 .UseCollation("latin1_swedish_ci");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("ID");
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.KitapId)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)")
                 .HasColumnName("kitapID");
             entity.Property(e => e.TurId)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(11)")
                 .HasColumnName("turID");
         });
 
@@ -178,9 +157,7 @@ public partial class KitapDbContext : DbContext
 
             entity.ToTable("user");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Password)
                 .HasMaxLength(50)
                 .HasColumnName("password");
@@ -195,15 +172,12 @@ public partial class KitapDbContext : DbContext
 
             entity.ToTable("yayinevleri");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("ID");
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Adres)
                 .HasMaxLength(150)
                 .HasColumnName("adres");
             entity.Property(e => e.Sira)
                 .HasDefaultValueSql("'1'")
-                .HasColumnType("int(4)")
                 .HasColumnName("sira");
             entity.Property(e => e.Tel)
                 .HasMaxLength(13)
@@ -221,9 +195,7 @@ public partial class KitapDbContext : DbContext
 
             entity.ToTable("yazarlar");
 
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("ID");
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Adi)
                 .HasMaxLength(100)
                 .IsFixedLength()
