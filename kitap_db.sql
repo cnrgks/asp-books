@@ -44,10 +44,12 @@ CREATE TABLE IF NOT EXISTS `iletisim` (
   `konu` varchar(150) NOT NULL,
   `mesaj` varchar(600) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin5;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin5;
 
--- kitap_db.iletisim: 0 rows tablosu için veriler indiriliyor
+-- kitap_db.iletisim: 1 rows tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `iletisim` DISABLE KEYS */;
+INSERT INTO `iletisim` (`id`, `isim`, `eposta`, `konu`, `mesaj`) VALUES
+	(15, 'Ramazan Çınar Göksu', 'rcinar.goksu@hotmail.com', 'Stajyer Başvurusu', 'Şişli Mesleki ve Teknik Anadolu Lisesi\'nde Bilişim Teknolojileri dalında eğitim görmekteyim. Şirketinizde stajyer öğrenci olarak  çalışmak istiyorum, Saygılar.');
 /*!40000 ALTER TABLE `iletisim` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor kitap_db.kitaplar
@@ -411,12 +413,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin5;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin5;
 
--- kitap_db.user: 1 rows tablosu için veriler indiriliyor
+-- kitap_db.user: 2 rows tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
-	(1, 'cnrgks', 'rc834750');
+	(1, 'cnrgks', 'rc834750'),
+	(2, 'test', '1234');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor kitap_db.yayinevleri

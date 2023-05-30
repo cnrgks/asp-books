@@ -454,4 +454,21 @@ public class AdminController : Controller
 
         return Redirect("/Admin/Yazarlar");
     }
+
+    [Route("/Admin/Contact")]
+    public IActionResult Contact()
+    {
+        List<ContactVM> MesajListesi = (from x in db.Iletisims
+                                        select new ContactVM
+                                        {
+                                            Id = x.Id,
+                                            Isim = x.Isim,
+                                            Eposta = x.Eposta,
+                                            Konu = x.Konu,
+                                            Mesaj = x.Mesaj
+                                        }).ToList();
+
+        db.Dispose();
+        return View(MesajListesi);
+    }
 }

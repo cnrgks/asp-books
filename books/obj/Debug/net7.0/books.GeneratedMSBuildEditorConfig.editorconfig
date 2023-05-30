@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Cinar\Documents\GitHub\asp-books\books
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Cinar/Documents/GitHub/asp-books/books/Views/Admin/DilForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlsRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

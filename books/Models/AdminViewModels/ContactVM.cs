@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace books.Models.ViewModels;
+namespace books.Models.AdminViewModels;
 
 public partial class ContactVM
 {
