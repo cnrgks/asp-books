@@ -45,6 +45,7 @@ public class AdminController : Controller
                     select x
                     ).FirstOrDefault();
 
+
         if (user != null)
         {
             var claims = new List<Claim>{
@@ -59,6 +60,11 @@ public class AdminController : Controller
             await HttpContext.SignInAsync(claimsPrinciple);
 
             return Redirect("/Admin/Index");
+        }
+
+        else
+        {
+            TempData["NotFound"] = "Yanlış kullanıcı adı veya parola.";
         }
 
         return View();

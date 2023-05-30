@@ -51,12 +51,17 @@
             <span asp-validation-for="Password" class="text-danger d-block col-12"></span>
           </div>
           <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember" />
-              </div>
+            <div class="col-12">
+              @if (TempData["NotFound"] != null)
+              {
+                <div class="alert alert-danger w-100" role="alert">
+                  @TempData["NotFound"]
+                </div>
+              }
             </div>
-
+          </div>
+          <div class="row">
+            <div class="col-8"></div>
             <!-- /.col -->
             <div class="col-4">
               <button type="submit" class="btn btn-primary btn-block">
