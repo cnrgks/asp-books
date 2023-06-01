@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj": {}
+    "c:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj": {
+    "c:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj",
+        "projectUniqueName": "c:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj",
         "projectName": "books",
-        "projectPath": "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj",
+        "projectPath": "c:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\books.csproj",
         "packagesPath": "C:\\Users\\Cinar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\obj\\",
+        "outputPath": "c:\\Users\\Cinar\\Documents\\GitHub\\asp-books\\books\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
